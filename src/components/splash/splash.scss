@@ -1,0 +1,27 @@
+.splash {
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.info {
+  position: absolute;
+  left: 50px;
+  bottom: 100px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .desc {
+    margin: 20px 0px;
+    font-size: 25px;
+    align-items: center;
+  }
+}
