@@ -1,0 +1,22 @@
+.Pictures {
+  margin: 10px;
+}
+
+.ingredients {
+  margin: auto;
+  border: 2px solid maroon;
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Board {
+  width: 90vw;
+  height: 500px;
+  margin: 50px 50px 50px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid black;
+}
