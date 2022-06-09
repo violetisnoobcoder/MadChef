@@ -3,18 +3,18 @@
 }
 
 .ingredients {
-  margin: auto;
+  margin: 15px;
   border: 2px solid maroon;
   width: 150px;
   height: 150px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 35px;
+  margin-right: 35px;
 }
 
 .Board {
-  width: 90vw;
+  width: 85%;
   height: 500px;
-  margin: 50px 50px 50px 50px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
