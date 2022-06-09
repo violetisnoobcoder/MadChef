@@ -10,10 +10,7 @@ function Splash() {
       />
       <div className="info">
         <span className="desc">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit veniam
-          accusamus illo, corporis qui soluta, consectetur voluptatibus
-          perspiciatis minus voluptas cum molestias a perferendis obcaecati
-          quos?
+          Search your ingredients to create a new recipe
         </span>
       </div>
     </div>
