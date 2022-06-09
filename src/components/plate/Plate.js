@@ -55,16 +55,16 @@ function Plate() {
   return (
     <>
       <div className="Pictures">
-        {PictureList.map((picture) => {
+        {PictureList.map((picture, id) => {
           return (
-            <Picture url={picture.url} name={picture.name} id={picture.id} />
+            <Picture key={id} url={picture.url} name={picture.name} id={picture.id} />
           );
         })}
       </div>
       <div className="Board" ref={drop}>
-        {board.map((picture) => {
+        {board.map((picture, id) => {
           return (
-            <Picture url={picture.url} name={picture.name} id={picture.id} />
+            <Picture key={id} url={picture.url} name={picture.name} id={picture.id} />
           );
         })}
       </div>
