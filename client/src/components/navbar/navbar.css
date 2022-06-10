@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Knewave&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Knewave", cursive;
+}
+
+.navbar {
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: black;
+}
+
+.container {
+  padding: 0px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70px;
+}
+
+.container .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .right .NavTitle {
+  font-size: 35px;
+  color: white;
+}
+
+.container span {
+  margin-right: 20px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=navbar.css.map */

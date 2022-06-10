@@ -8,7 +8,7 @@ const typeDefs = gql`
     }
 
     type Recipe {
-        id: Number
+        id: Int
         diets: String
         ingredients: String
     }

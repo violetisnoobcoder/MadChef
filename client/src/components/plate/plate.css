@@ -1,0 +1,28 @@
+.Pictures {
+  margin: 10px;
+}
+
+.ingredients {
+  margin: 15px;
+  border: 2px solid maroon;
+  width: 150px;
+  height: 150px;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.Board {
+  width: 85%;
+  height: 500px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 2px solid black;
+}
+/*# sourceMappingURL=plate.css.map */
