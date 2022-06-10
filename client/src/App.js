@@ -1,24 +1,52 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import Home from './pages/Home'
+import SearchBooks from './pages/SearchRecipes';
+import SavedRecipes from './pages/SavedRecipes';
+import Navbar from './components/Navbar';
 
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
-import "./App.css";
-import Plate from "./components/plate/Plate";
-import Home from "./pages/home/Home";
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
-const App = () => {
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
+
+function App() {
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div>
-        <Home />
-      </div>
-
-      <div className="App">
-        <Plate />
-      </div>
-    </DndProvider>
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <Navbar />
+            <Switch>
+              <Route exact path= '/' component={Home} />
+              <Route exact path='/search' component={SearchBooks} />
+              <Route exact path='/saved' component={SavedRecipes} />
+              <Route render={() => <h1 className='display-2'>Incorrect page</h1>} />
+            </Switch>
+        </>
+      </Router>
+    </ApolloProvider>
   );
-};
+}
 
 export default App;
