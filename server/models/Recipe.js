@@ -2,15 +2,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const recipeSchema = new Schema({
-  bookId: {
+  recipeId: {
     type: String,
     required: true,
   },
-  authors: [
-    {
-      type: String,
-    },
-  ],
   description: {
     type: String,
     required: true,

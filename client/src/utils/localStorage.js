@@ -1,6 +1,6 @@
 export const getSavedRecipesIds = () => {
-  const savedRecipeIds = localStorage.getItem('saved_books')
-    ? JSON.parse(localStorage.getItem('saved_books'))
+  const savedRecipeIds = localStorage.getItem('saved_recipe')
+    ? JSON.parse(localStorage.getItem('saved_recipe'))
     : [];
 
   return savedRecipeIds;
@@ -8,15 +8,15 @@ export const getSavedRecipesIds = () => {
 
 export const saveRecipeIds = (recipeIdArr) => {
   if (recipeIdArr.length) {
-    localStorage.setItem('saved_books', JSON.stringify(recipeIdArr));
+    localStorage.setItem('saved_recipe', JSON.stringify(recipeIdArr));
   } else {
-    localStorage.removeItem('saved_books');
+    localStorage.removeItem('saved_recipe');
   }
 };
 
 export const removeRecipeId = (recipeId) => {
-  const savedRecipeIds = localStorage.getItem('saved_books')
-    ? JSON.parse(localStorage.getItem('saved_books'))
+  const savedRecipeIds = localStorage.getItem('saved_recipe')
+    ? JSON.parse(localStorage.getItem('saved_recipe'))
     : null;
 
   if (!savedRecipeIds) {
@@ -24,7 +24,7 @@ export const removeRecipeId = (recipeId) => {
   }
 
   const updatedSavedRecipeIds = savedRecipeIds?.filter((savedId) => savedId !== recipeId);
-  localStorage.setItem('saved_books', JSON.stringify(updatedSavedRecipeIds));
+  localStorage.setItem('saved_recipe', JSON.stringify(updatedSavedRecipeIds));
 
   return true;
 };

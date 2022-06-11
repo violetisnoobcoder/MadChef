@@ -5,15 +5,15 @@ import { saveRecipeIds, getSavedRecipesIds } from '../utils/localStorage';
 import { useMutation } from '@apollo/client';
 import { SAVE_RECIPE } from '../utils/mutations';
 
-const SearchBooks = () => {
-  const [searchedBooks, setSearchedBooks] = useState([]);
+const SearchRecipes = () => {
+  const [searchedRecipes, setSearchedRecipes] = useState([]);
   const [searchInput, setSearchInput] = useState('');
-  const [savedBookIds, setSavedBookIds] = useState(getSavedRecipesIds());
+  const [savedRecipeIds, setSavedRecipeIds] = useState(getSavedRecipesIds());
 
-  const [saveBook, { error }] = useMutation(SAVE_RECIPE);
+  const [saveRecipe, { error }] = useMutation(SAVE_RECIPE);
 
   useEffect(() => {
-    return () => saveRecipeIds(savedBookIds);
+    return () => saveRecipeIds(savedRecipeIds);
   });
 
   const handleFormSubmit = async (event) => {
@@ -34,23 +34,21 @@ const SearchBooks = () => {
 
       const { meals } = await response.json();
 
-      const bookData = meals.map((book) => ({
-        bookId: book.idMeal,
-        // authors: book.volumeInfo.authors || ['No author to display'],
-        title: book.strMeal,
-        description: book.strInstructions,
-        image: book.strMealThumb || '',
+      const recipeData = meals.map((data) => ({
+        recipeId: data.idMeal,
+        title: data.strMeal,
+        description: data.strInstructions,
+        image: data.strMealThumb || '',
       }));
-
-      setSearchedBooks(bookData);
+      setSearchedRecipes(recipeData);
       setSearchInput('');
     } catch (err) {
       console.error(err);
     }
   };
 
-  const handleSaveBook = async (bookId) => {
-    const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+  const handleSaveRecipe = async (recipeId) => {
+    const recipeToSave = searchedRecipes.find((data) => data.recipeId === recipeId);
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -58,11 +56,11 @@ const SearchBooks = () => {
     }
 
     try {
-      const { data } = await saveBook({
-        variables: { newBook: { ...bookToSave } },
+      const { data } = await saveRecipe({
+        variables: { newRecipe: { ...recipeToSave } },
       });
 
-      setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      setSavedRecipeIds([...savedRecipeIds, recipeToSave.recipeId]);
     } catch (err) {
       console.error(err);
     }
@@ -97,27 +95,26 @@ const SearchBooks = () => {
 
       <Container>
         <h2>
-          {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
+          {searchedRecipes.length
+            ? `Viewing ${searchedRecipes.length} results:`
             : 'Search for a recipe to begin'}
         </h2>
         <CardColumns>
-          {searchedBooks.map((book) => {
+          {searchedRecipes.map((data) => {
             return (
-              <Card key={book.bookId} border='dark'>
-                {book.image ? (
-                  <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
+              <Card key={data.recipeId} border='dark'>
+                {data.image ? (
+                  <Card.Img src={data.image} alt={`The cover for ${data.title}`} variant='top' />
                 ) : null}
                 <Card.Body>
-                  <Card.Title>{book.title}</Card.Title>
-                  {/* <p className='small'>Authors: {book.authors}</p> */}
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Title>{data.title}</Card.Title>
+                  <Card.Text>{data.description}</Card.Text>
                   {Auth.loggedIn() && (
                     <Button
-                      disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
+                      disabled={savedRecipeIds?.some((savedRecipeId) => savedRecipeId === data.recipeId)}
                       className='btn-block btn-info'
-                      onClick={() => handleSaveBook(book.bookId)}>
-                      {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
+                      onClick={() => handleSaveRecipe(data.recipeId)}>
+                      {savedRecipeIds?.some((savedRecipeId) => savedRecipeId === data.recipeId)
                         ? 'This recipe has been saved'
                         : 'Save this recipe'}
                     </Button>
@@ -132,4 +129,4 @@ const SearchBooks = () => {
   );
 };
 
-export default SearchBooks;
+export default SearchRecipes;

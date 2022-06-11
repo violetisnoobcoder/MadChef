@@ -23,7 +23,6 @@ const AppNavbar = () => {
               <Nav.Link as={Link} to='/search'>
                 Search For Recipies
               </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
                   <Nav.Link as={Link} to='/saved'>

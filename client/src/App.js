@@ -8,7 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Home from './pages/Home'
-import SearchBooks from './pages/SearchRecipes';
+import SearchRecipes from './pages/SearchRecipes';
 import SavedRecipes from './pages/SavedRecipes';
 import Navbar from './components/Navbar';
 
@@ -39,7 +39,7 @@ function App() {
           <Navbar />
             <Switch>
               <Route exact path= '/' component={Home} />
-              <Route exact path='/search' component={SearchBooks} />
+              <Route exact path='/search' component={SearchRecipes} />
               <Route exact path='/saved' component={SavedRecipes} />
               <Route render={() => <h1 className='display-2'>Incorrect page</h1>} />
             </Switch>

@@ -40,7 +40,7 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('bookCount').get(function () {
+userSchema.virtual('recipeCount').get(function () {
   return this.SavedRecipes.length;
 });
 

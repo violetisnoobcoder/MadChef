@@ -34,10 +34,9 @@ export const ADD_USER = gql`
         _id
         username
         email
-        bookCount
+        recipeCount
         SavedRecipes {
-          authors
-          bookId
+          recipeId
           image
           link
           title
@@ -49,14 +48,13 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_RECIPE = gql`
-  mutation saveBook($newBook: InputBook!) {
-    saveBook(newBook: $newBook) {
+  mutation saveRecipe($newRecipe: inputRecipe!) {
+    saveRecipe(newRecipe: $newRecipe) {
       _id
       username
       email
       SavedRecipes {
-        bookId
-        authors
+        recipeId
         description
         title
         image
@@ -67,14 +65,13 @@ export const SAVE_RECIPE = gql`
 `;
 
 export const REMOVE_RECIPE = gql`
-  mutation removeBook($bookId: ID!) {
-    removeBook(bookId: $bookId) {
+  mutation removeRecipe($recipeId: ID!) {
+    removeRecipe(recipeId: $recipeId) {
       _id
       username
       email
       SavedRecipes {
-        bookId
-        authors
+        recipeId
         description
         title
         image
