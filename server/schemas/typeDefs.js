@@ -23,7 +23,7 @@ const typeDefs = gql`
   }
 
   input inputRecipe {
-    recipeId: String
+    recipeId: Int
     title: String
     description: String
     image: String

@@ -25,20 +25,20 @@ const SearchRecipes = () => {
 
     try {
       const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`
+        `https://api.spoonacular.com/recipes/findByIngredients?apiKey=5d21fcc224ed4f1caff20062b5740f70&ingredients=${searchInput}`
       );
 
       if (!response.ok) {
         throw new Error('Something went wrong!');
       }
 
-      const { meals } = await response.json();
+      const  meals  = await response.json();
 
       const recipeData = meals.map((data) => ({
-        recipeId: data.idMeal,
-        title: data.strMeal,
-        description: data.strInstructions,
-        image: data.strMealThumb || '',
+        recipeId: data.id,
+        title: data.title,
+        description: '',
+        image: data.image || '',
       }));
       setSearchedRecipes(recipeData);
       setSearchInput('');
