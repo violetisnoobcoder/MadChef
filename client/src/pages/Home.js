@@ -1,4 +1,5 @@
 import Splash from "../components/splash/Splash";
+// import Plate from "../components/plate/App"
 import "./home.scss";
 import React from "react";
 import {
@@ -17,6 +18,7 @@ const Home = () => {
     <div className="home">
       <Navbar />
       <Splash />
+      {/* <Plate /> */}
     </div>
   );
 };
