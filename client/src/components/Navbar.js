@@ -49,10 +49,10 @@ const AppNavbar = () => {
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link className='modal-button-custom btn-outline-dark' eventKey='login'>Login</Nav.Link>
+                  <Nav.Link className='modal-button-custom btn-outline-dark' eventKey='login'>LOGIN</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link className='modal-button-custom btn-outline-dark' eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link className='modal-button-custom btn-outline-dark' eventKey='signup'>SIGN UP</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
