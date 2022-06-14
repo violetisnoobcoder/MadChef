@@ -1,17 +1,32 @@
 import React from "react";
 import "./splash.scss";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 function Splash() {
   return (
-    <div className="splash">
-      <img
-        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-        alt=""
-      />
-      <div className="info">
-        <span className="desc">
-          SEE YOUR FOOD
-        </span>
+    // <div className="videoBg">
+    //   <video autoPlay loop muted>
+    //     <source src={VidBg} autoPlay loop></source>
+    //   </video>
+    //   <div className="text-wrapper"></div
+    //   <h1>Welcome to MadChef!</h1>
+    //   <h2>SEE YOUR FOOD</h2>
+
+    <div class="jumbotron">
+      <h1>Welcome to MadChef!</h1>
+      <h2>SEE YOUR FOOD</h2>
+      <div className="button-input">
+        <InputGroup className="mb-3">
+          <FormControl
+            className="FormControl"
+            placeholder="Search for recipe's here!"
+            aria-label="Meal Search Input"
+            aria-describedby="meal-search-btn"
+          />
+          <Button className="btn btn-danger" id="meal-search-btn">
+            Bash for your recipes!
+          </Button>
+        </InputGroup>
       </div>
     </div>
   );
