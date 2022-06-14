@@ -8,6 +8,7 @@ import {
   Button,
   Card,
   CardColumns,
+  Modal,
 } from "react-bootstrap";
 
 import "./styles.css";
@@ -16,6 +17,9 @@ function App() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
   const [searchedRecipes, setSearchedRecipes] = useState([]);
+  const [show, setShow] = useState(false);
+  const [searchById, setSearchById] = useState([]);
+  const handleClose = () => setShow(false);
   const checkList = [
     "Onion",
     "Cheese",
@@ -40,8 +44,6 @@ function App() {
           throw new Error("Something went wrong!");
         }
 
-        debugger;
-
         const meals = await response.json();
 
         const recipeData = meals.map((data) => ({
@@ -58,6 +60,29 @@ function App() {
       updatedList.splice(checked.indexOf(event.target.value), 1);
     }
     setChecked(updatedList);
+  };
+
+  const showDetails = async (event) => {
+    setShow(true);
+    try {
+      const response = await fetch(
+        `https://api.spoonacular.com/recipes/${event.currentTarget.id}/information?apiKey=5d21fcc224ed4f1caff20062b5740f70&includeNutrition=false`
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong!");
+      }
+
+      const meals = await response.json();
+
+      const recipeIdData = meals.map((data) => ({
+        description: data.summary,
+        image: data.image || "",
+      }));
+      setSearchById(recipeIdData);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   // Generate string of checked items
@@ -84,17 +109,29 @@ function App() {
             <CardColumns>
               {searchedRecipes.map((data) => {
                 return (
-                  <Card key={data.recipeId} border="dark">
-                    {data.image ? (
-                      <Card.Img
-                        src={data.image}
-                        alt={`The cover for ${data.title}`}
-                        variant="top"
-                      />
-                    ) : null}
+                  <Card key={data.recipeId} style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src={data.image} />
                     <Card.Body>
                       <Card.Title>{data.title}</Card.Title>
-                      <Card.Text>{data.description}</Card.Text>
+                      <Button
+                        variant="primary"
+                        id={data.recipeId}
+                        onClick={showDetails}
+                      >
+                        See More
+                      </Button>
+                      {searchById.map((data) => {
+                        return (
+                          <Modal show={show} onHide={handleClose}>
+                            <Modal.Body>{data.description}</Modal.Body>
+                            <Modal.Footer>
+                              <Button variant="secondary" onClick={handleClose}>
+                                Close
+                              </Button>
+                            </Modal.Footer>
+                          </Modal>
+                        );
+                      })}
                     </Card.Body>
                   </Card>
                 );
