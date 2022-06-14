@@ -12,7 +12,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg='dark' variant='dark' expand='lg' style={{marginBottom: "0"}} inverse className="fixed-top collapseOnSelect nav-bar">
+      <Navbar bg='dark' variant='dark' expand='lg' style={{marginBottom: "0px", padding: "5px"}} inverse className="collapseOnSelect nav-bar">
         <Container fluid>
           <Navbar.Brand as={Link} to='/'>
             MadChef
