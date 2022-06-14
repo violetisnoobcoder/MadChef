@@ -12,7 +12,6 @@ import {
 } from "react-bootstrap";
 
 import "./styles.css";
-
 function App() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
@@ -29,7 +28,6 @@ function App() {
     "Eggs",
     "Quorn",
   ];
-
   // Add/Remove checked item from list
   const handleCheck = async (event) => {
     var updatedList = [...checked];
@@ -37,9 +35,8 @@ function App() {
       updatedList = [...checked, event.target.value];
       try {
         const response = await fetch(
-          `https://api.spoonacular.com/recipes/findByIngredients?apiKey=5d21fcc224ed4f1caff20062b5740f70&ingredients=${updatedList}&number=3`
+          `https://api.spoonacular.com/recipes/findByIngredients?apiKey=b622f7d1fa414549a865f90abc479acf&ingredients=${updatedList}&number=3`
         );
-
         if (!response.ok) {
           throw new Error("Something went wrong!");
         }
@@ -66,19 +63,20 @@ function App() {
     setShow(true);
     try {
       const response = await fetch(
-        `https://api.spoonacular.com/recipes/${event.currentTarget.id}/information?apiKey=5d21fcc224ed4f1caff20062b5740f70&includeNutrition=false`
+        `https://api.spoonacular.com/recipes/${event.currentTarget.id}/information?apiKey=b622f7d1fa414549a865f90abc479acf&includeNutrition=false`
       );
 
       if (!response.ok) {
         throw new Error("Something went wrong!");
       }
 
-      const meals = await response.json();
+      const meal = await response.json();
 
-      const recipeIdData = meals.map((data) => ({
-        description: data.summary,
-        image: data.image || "",
-      }));
+      const recipeIdData = {
+        description: meal.summary,
+        image: meal.image || "",
+      };
+      console.log(JSON.stringify(recipeIdData));
       setSearchById(recipeIdData);
     } catch (err) {
       console.error(err);
@@ -91,11 +89,9 @@ function App() {
         return total + "+" + item;
       })
     : "";
-
   // Return classes based on whether item is checked
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
-
   return (
     <div className="app">
       <div className="checkList">
@@ -120,18 +116,20 @@ function App() {
                       >
                         See More
                       </Button>
-                      {searchById.map((data) => {
-                        return (
-                          <Modal show={show} onHide={handleClose}>
-                            <Modal.Body>{data.description}</Modal.Body>
-                            <Modal.Footer>
-                              <Button variant="secondary" onClick={handleClose}>
-                                Close
-                              </Button>
-                            </Modal.Footer>
-                          </Modal>
-                        );
-                      })}
+                      <Modal show={show} onHide={handleClose}>
+                        <Modal.Body>
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: searchById.description,
+                            }}
+                          ></span>
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <Button variant="secondary" onClick={handleClose}>
+                            Close
+                          </Button>
+                        </Modal.Footer>
+                      </Modal>
                     </Card.Body>
                   </Card>
                 );
@@ -152,5 +150,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
