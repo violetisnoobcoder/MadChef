@@ -1,0 +1,26 @@
+.modal-header-custom {
+    background-color: #a165b2;
+    margin: -1px;
+    border-width: 10px;
+    border-color: black;
+}
+
+.modal-body-custom {
+    background-color: #a165b2;
+    margin: -1px;
+    // border-width: 10px;
+    // border-color: black;
+}
+
+
+.modal-button-custom {
+    background-color: rgb(96, 96, 96);
+    color: rgb(252, 252, 252);
+    text-shadow: 2px 2px black, 1px 1px black;
+    margin: 5px;
+}
+
+.modal-button-custom:hover {
+    text-shadow: -2px -2px coral, -1px -1px coral;
+}
+

@@ -10,7 +10,7 @@ function Splash() {
       />
       <div className="info">
         <span className="desc">
-          Search your ingredients to create a new recipe
+          SEE YOUR FOOD
         </span>
       </div>
     </div>

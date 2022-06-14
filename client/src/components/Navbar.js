@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import SignUpForm from './SignupForm';
 import LoginForm from './LoginForm';
-
 import Auth from '../utils/auth';
+import "./navbar.scss"
 
 const AppNavbar = () => {
   // set modal display state
@@ -14,14 +14,14 @@ const AppNavbar = () => {
     <>
       <Navbar bg='dark' variant='dark' expand='lg' style={{marginBottom: "0px", padding: "5px"}} inverse className="collapseOnSelect nav-bar">
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
+          <Navbar.Brand id="madchef-title" as={Link} to='/' style={{marginBottom: "0px", paddingTop: "10px"}}>
             MadChef
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
           <Navbar.Collapse id='navbar'>
-            <Nav className='ml-auto'>
+            <Nav className='ml-auto' style={{marginBottom: "0px", paddingTop: "4px"}}>
               <Nav.Link as={Link} to='/search'>
-                Search For Recipies
+                SEARCH FOR RECIPES
               </Nav.Link>
               {Auth.loggedIn() ? (
                 <>
@@ -31,7 +31,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)}>LOGIN/SIGN UP</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
@@ -45,19 +45,19 @@ const AppNavbar = () => {
         aria-labelledby='signup-modal'>
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
+          <Modal.Header closeButton className='modal-header-custom'>
             <Modal.Title id='signup-modal'>
               <Nav variant='pills'>
                 <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
+                  <Nav.Link className='modal-button-custom btn-outline-dark' eventKey='login'>Login</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
+                  <Nav.Link className='modal-button-custom btn-outline-dark' eventKey='signup'>Sign Up</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='modal-body-custom'>
             <Tab.Content>
               <Tab.Pane eventKey='login'>
                 <LoginForm handleModalClose={() => setShowModal(false)} />
