@@ -11,6 +11,7 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 0px;
+  overflow: hidden;
 }
 
 .button-input {
@@ -51,6 +52,11 @@ h6 {
   display: flex;
   justify-content: center;
   text-decoration: none;
+}
+
+.navbar-expand {
+  margin: -8px;
+  display: none;
 }
 
 // .videoBg {
