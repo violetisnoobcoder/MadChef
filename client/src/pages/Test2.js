@@ -11,7 +11,7 @@ import {
   Modal,
 } from "react-bootstrap";
 
-import "./styles.css";
+import "./test2.scss";
 function App() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
