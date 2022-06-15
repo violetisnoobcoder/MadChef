@@ -1,5 +1,5 @@
 .modal-header-custom {
-  background-color: #f2f2f2;
+  background-color: #656e70;
   margin: -1px;
   border-width: 10px;
   border-color: black;
@@ -13,20 +13,33 @@
 }
 
 .modal-button-custom {
-  background-color: rgb(96, 96, 96);
+  background-color: #343a40;
   color: rgb(252, 252, 252);
   text-shadow: 2px 2px black, 1px 1px black;
   margin: 5px;
   font-size: 16pt;
-  text-shadow: 2px 2px #4db968, 1px 1px #4db968;
+//   text-shadow: 2px 2px #000000, 1px 1px #000000;
+}
+
+.btn-success {
+    text-shadow: 2px 2px black, 1px 1px black;
+    background-color: #11D992;
+}
+
+.btn-success:hover {
+    text-shadow: -2px -2px black, -1px -1px black;
 }
 
 .modal-button-custom:hover {
-  text-shadow: -2px -2px coral, -1px -1px coral;
+  text-shadow: -2px -2px black, -1px -1px black;
 }
 
 .close {
   font-size: 40pt;
+}
+
+.close:hover {
+    text-shadow: -2px -2px white, -1px -1px white;
 }
 
 #madchef-title {
@@ -38,4 +51,8 @@
 .navbar-dark .navbar-nav .nav-link {
   color: white;
   font-size: 25px !important;
+}
+
+.bg-dark {
+    background-color: black!important;
 }
