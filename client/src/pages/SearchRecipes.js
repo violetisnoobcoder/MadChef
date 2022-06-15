@@ -105,11 +105,12 @@ const SearchRecipes = () => {
       </Jumbotron>
 
       <Container>
-        <h2>
+        {/* was generating an empty h2 but keeping incase it's important */}
+        {/* <h2>
           {searchedRecipes.length
             ? `Viewing ${searchedRecipes.length} results:`
             : "Search for a recipe to begin"}
-        </h2>
+        </h2> */}
         <CardColumns>
           {searchedRecipes.map((data) => {
             return (
