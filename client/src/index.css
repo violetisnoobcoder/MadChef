@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Knewave&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Concert+One&family=Dosis:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 body {
   font-family: 'Anton', sans-serif;
   /* kerning but needs targetting */
@@ -13,11 +13,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Knewave", cursive;
+  font-family: "Anton", cursive;
 }
 
 #madchef-title {
-  font-family: "Knewave", cursive;
+  font-family: "Anton", cursive;
 }
 
 .small {
