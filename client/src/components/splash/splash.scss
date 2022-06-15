@@ -13,12 +13,43 @@
 }
 
 .button-input {
-  width: 60%;
+  width: 70%;
 }
 
 .jumbotron h1,
 h2 {
   color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Anton", cursive;
+}
+
+.btnSearch {
+  text-transform: none;
+  width: 45%;
+}
+
+.slogan {
+  font-size: 45px;
+  padding: 15px;
+}
+
+.sloganBelow {
+  padding-bottom: 10px;
+}
+
+.recipeBtn {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }
 
 // .videoBg {
