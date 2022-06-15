@@ -1,6 +1,7 @@
 import React from "react";
 import "./splash.scss";
-import { InputGroup, FormControl, Button } from "react-bootstrap";
+import { InputGroup, Button } from "react-bootstrap";
+// import { Link } from "react-dom";
 
 function Splash() {
   return (
@@ -13,19 +14,15 @@ function Splash() {
     //   <h2>SEE YOUR FOOD</h2>
 
     <div class="jumbotron">
-      <h1>Welcome to MadChef!</h1>
-      <h2>SEE YOUR FOOD</h2>
+      <h1 className="slogan">Welcome to MadChef!</h1>
+      <h2 className="sloganBelow">Lets Get Started!</h2>
       <div className="button-input">
-        <InputGroup className="mb-3">
-          <FormControl
-            className="FormControl"
-            placeholder="Search for recipe's here!"
-            aria-label="Meal Search Input"
-            aria-describedby="meal-search-btn"
-          />
-          <Button className="btn btn-danger" id="meal-search-btn">
-            Bash for your recipes!
-          </Button>
+        <InputGroup className="mb-3 d-flex justify-content-center">
+          <a href="/search" className="recipeBtn">
+            <Button className="btn-danger btnSearch">
+              SEARCH FOR RECIPES HERE!
+            </Button>
+          </a>
         </InputGroup>
       </div>
     </div>
