@@ -1,7 +1,7 @@
+import React from "react";
 import Splash from "../components/splash/Splash";
 // import Plate from "../components/plate/App"
 import "./home.scss";
-import React from "react";
 import {
   Jumbotron,
   Container,
@@ -10,7 +10,7 @@ import {
   Button,
   Navbar,
 } from "react-bootstrap";
-import Footer from "../components/Footer/Footer";
+// import Footer from "../components/Footer/Footer";
 import Auth from "../utils/auth";
 import Picture from "../components/picture/Picture";
 
@@ -19,8 +19,6 @@ const Home = () => {
     <div className="home">
       <Navbar />
       <Splash />
-      <Footer />
-      {/* <Plate /> */}
     </div>
   );
 };
