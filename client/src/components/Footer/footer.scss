@@ -1,0 +1,88 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white !important;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.footerLogo {
+  color: #ffffff !important;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.footer-social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer-social-media__icon {
+  margin: 0px 4px;
+  width: 25px;
+  height: 25px;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.footer-info-left,
+.footer-info-center,
+.footer-info-right {
+  font-size: x-small;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 30%;
+}
+
+.footer-info__name,
+.footer-info__email,
+.footer-info__number {
+  margin-bottom: 10px;
+}
+
+.footer-info__name,
+.footer-info__returns {
+  text-align: start;
+}
+
+.footer-info__email,
+.footer-info__terms {
+  text-align: center;
+}
+
+.footer-info__number,
+.footer-info__contact {
+  text-align: end;
+}
+
+.footer-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-name {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.footer-bottom__name {
+  text-transform: uppercase;
+  font-family: "Anton";
+  font-size: large;
+  margin: 0px 20px;
+}
