@@ -35,7 +35,7 @@ const Footer = () => {
         </section>
         <section className="footer-info-right">
           <section className="footer-info__contact">
-            GitBub
+            GitHub
             <br />
             Facebook
             <br />
