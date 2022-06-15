@@ -13,7 +13,6 @@ import SavedRecipes from "./pages/SavedRecipes";
 import Navbar from "./components/Navbar";
 import Test from "./pages/Test";
 import Test2 from "./pages/Test2";
-import Footer from "./components/Footer/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -50,7 +49,6 @@ function App() {
               render={() => <h1 className="display-2">Incorrect page</h1>}
             />
           </Switch>
-          <Footer />
         </>
       </Router>
     </ApolloProvider>
