@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 
 import "./test2.scss";
+
 function App() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
@@ -20,13 +21,24 @@ function App() {
   const [searchById, setSearchById] = useState([]);
   const handleClose = () => setShow(false);
   const checkList = [
-    "Onion",
+    "Milk",
+    "Peppers",
+    "Beans",
+    "Tinned Tomatoes",
     "Cheese",
     "Cream",
     "Chicken",
     "Beef",
     "Eggs",
     "Quorn",
+    "Bread",
+    "Bacon",
+    "Butter",
+    "Ham",
+    "Tofu",
+    "Halloumi",
+    "Steak",
+    "Pasta",
   ];
   // Add/Remove checked item from list
   const handleCheck = async (event) => {
@@ -140,7 +152,7 @@ function App() {
         <div className="title">Your CheckList:</div>
         <div className="list-container">
           {checkList.map((item, index) => (
-            <div key={index}>
+            <div className="check-list" key={index}>
               <input value={item} type="checkbox" onChange={handleCheck} />
               <span className={isChecked(item)}>{item}</span>
             </div>
