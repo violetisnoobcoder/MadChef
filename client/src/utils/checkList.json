@@ -1,0 +1,10 @@
+[
+  {
+    "item": "Lemon",
+    "image": "/images/lemon.png"
+  },
+  {
+    "item": "Tomato",
+    "image": "/images/tomato.png"
+  }
+]

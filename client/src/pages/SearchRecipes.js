@@ -12,6 +12,7 @@ import Auth from "../utils/auth";
 import { saveRecipeIds, getSavedRecipesIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/client";
 import { SAVE_RECIPE } from "../utils/mutations";
+import "./searchRecipes.scss";
 
 const SearchRecipes = () => {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -79,8 +80,8 @@ const SearchRecipes = () => {
   return (
     <>
       <Jumbotron fluid className="text-light bg-dark">
-        <Container>
-          <h1>Search for Recipes</h1>
+        <Container className="searchLayout">
+          <h1>SEARCH FOR RECIPES</h1>
           <Form onSubmit={handleFormSubmit}>
             <Form.Row>
               <Col xs={12} md={8}>
@@ -104,11 +105,12 @@ const SearchRecipes = () => {
       </Jumbotron>
 
       <Container>
-        <h2>
+        {/* was generating an empty h2 but keeping incase it's important */}
+        {/* <h2>
           {searchedRecipes.length
             ? `Viewing ${searchedRecipes.length} results:`
             : "Search for a recipe to begin"}
-        </h2>
+        </h2> */}
         <CardColumns>
           {searchedRecipes.map((data) => {
             return (
@@ -134,8 +136,8 @@ const SearchRecipes = () => {
                       {savedRecipeIds?.some(
                         (savedRecipeId) => savedRecipeId === data.recipeId
                       )
-                        ? "This recipe has been saved"
-                        : "Save this recipe"}
+                        ? "RECIPE SAVED"
+                        : "SAVE RECIPE"}
                     </Button>
                   )}
                 </Card.Body>

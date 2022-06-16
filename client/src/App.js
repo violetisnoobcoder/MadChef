@@ -11,8 +11,8 @@ import Home from "./pages/Home";
 import SearchRecipes from "./pages/SearchRecipes";
 import SavedRecipes from "./pages/SavedRecipes";
 import Navbar from "./components/Navbar";
-import Test from "./pages/Test";
-import Test2 from "./pages/Test2";
+import RecipeBuilder from "./components/RecipeBuilder/RecipeBuilder";
+import Footer from "./components/Footer/Footer";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -43,14 +43,14 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={SearchRecipes} />
             <Route exact path="/saved" component={SavedRecipes} />
-            <Route exact path="/test" component={Test} />
-            <Route exact path="/test2" component={Test2} />
+            <Route exact path="/RecipeBuilder" component={RecipeBuilder} />
             <Route
               render={() => <h1 className="display-2">Incorrect page</h1>}
             />
           </Switch>
         </>
       </Router>
+      <Footer />
     </ApolloProvider>
   );
 }
