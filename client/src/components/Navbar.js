@@ -17,7 +17,6 @@ const AppNavbar = () => {
         variant="dark"
         expand="lg"
         style={{ marginBottom: "0px", paddingLeft: "10px" }}
-        inverse
         className="collapseOnSelect nav-bar"
       >
         <Container fluid>
