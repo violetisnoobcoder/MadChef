@@ -108,6 +108,19 @@ function App() {
     checked.includes(item) ? "checked-item" : "not-checked-item";
   return (
     <div className="app">
+      <div className="imgReset">
+        <img
+          className="recpieSplashScreen"
+          src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        />
+        <div className="centered">
+          <div className="slogan">
+            <span className="sloganText1">
+              Lets Get Started! Select Your Ingredients!
+            </span>
+          </div>
+        </div>
+      </div>
       <div className="checkList">
         <div>
           <Container>
