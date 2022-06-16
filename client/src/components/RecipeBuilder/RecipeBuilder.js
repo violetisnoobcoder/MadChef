@@ -116,7 +116,7 @@ function App() {
         <div className="centered">
           <div className="slogan">
             <span className="sloganText1">
-              Lets Get Started! Select Your Ingredients!
+              Lets Get Started & Select Your Ingredients!
             </span>
           </div>
         </div>
