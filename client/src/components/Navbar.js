@@ -36,7 +36,7 @@ const AppNavbar = () => {
               style={{ marginBottom: "0px", paddingTop: "4px" }}
             >
               <Nav.Link as={Link} to="/RecipeBuilder">
-                BUILD A RECIPES
+                BUILD A RECIPE
               </Nav.Link>
               <Nav.Link as={Link} to="/search">
                 SEARCH FOR RECIPES
