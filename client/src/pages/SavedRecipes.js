@@ -57,7 +57,7 @@ const SavedRecipes = () => {
         <CardColumns>
           {userData.SavedRecipes.map((data) => {
             return (
-              <Card key={data.recipeId} border="dark">
+              <Card className="mt-4" key={data.recipeId} border="dark">
                 {data.image ? (
                   <Card.Img
                     src={data.image}
