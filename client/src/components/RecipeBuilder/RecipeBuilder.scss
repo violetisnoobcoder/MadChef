@@ -1,5 +1,5 @@
 .app {
-  font-family: sans-serif;
+  font-family: "Anton", sans-serif;
   font-size: 18px;
   display: flex;
   align-items: center;
@@ -12,6 +12,7 @@
 .title {
   font-size: 22px;
   margin-bottom: 10px;
+  font-family: "Anton";
 }
 .list-container {
   display: flex;
