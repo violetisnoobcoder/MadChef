@@ -1,8 +1,12 @@
 # MadChef
 
-Repository link to MadChef [Madchef](https://github.com/sikandersultan/MadChef)
+Repository link to MadChef
 <br>
-Link to a deployed heroku example [Heroku Madchef](https://mad-chef.herokuapp.com/)
+[Madchef](https://github.com/sikandersultan/MadChef)
+<br>
+Link to a deployed heroku example
+<br>
+[Heroku Madchef](https://mad-chef.herokuapp.com/)
 
 ## Description
 
@@ -38,4 +42,3 @@ Github:
 - https://github.com/Ryocon
 - https://github.com/NKC27
 - https://github.com/sikandersultan
--
