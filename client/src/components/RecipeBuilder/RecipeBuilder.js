@@ -11,9 +11,9 @@ import {
   Modal,
 } from "react-bootstrap";
 
-import "./test2.scss";
+import "./RecipeBuilder.scss";
 
-import checkList from "../utils/checkList.json"
+import checkList from "../../utils/checkList.json";
 
 function App() {
   // State with list of all checked item
@@ -156,7 +156,12 @@ function App() {
           {checkList.map((item, index) => (
             <div className="check-list" key={index}>
               <input value={item.item} type="checkbox" onChange={handleCheck} />
-              <span className={isChecked(item.item)}><img className="ingredients" src={process.env.PUBLIC_URL + item.image}></img></span>
+              <span className={isChecked(item.item)}>
+                <img
+                  className="ingredients"
+                  src={process.env.PUBLIC_URL + item.image}
+                ></img>
+              </span>
             </div>
           ))}
         </div>
