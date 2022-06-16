@@ -135,7 +135,9 @@ function App() {
                   <Card key={data.recipeId} style={{ width: "18rem" }}>
                     <Card.Img variant="top" src={data.image} />
                     <Card.Body>
-                      <Card.Title>{data.title}</Card.Title>
+                      <Card.Title className="font-family: 'Anton';">
+                        {data.title}
+                      </Card.Title>
                       <Button
                         variant="primary"
                         id={data.recipeId}
