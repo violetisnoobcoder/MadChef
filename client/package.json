@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "babel-eslint": "^10.1.0",
     "bootstrap": "^4.4.1",
     "graphql": "^14.6.0",
     "jwt-decode": "^2.2.0",
@@ -27,7 +28,8 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "parser": "babel-eslint"
   },
   "browserslist": {
     "production": [

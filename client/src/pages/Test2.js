@@ -13,6 +13,8 @@ import {
 
 import "./test2.scss";
 
+import checkList from "../utils/checkList.json"
+
 function App() {
   // State with list of all checked item
   const [checked, setChecked] = useState([]);
@@ -20,26 +22,26 @@ function App() {
   const [show, setShow] = useState(false);
   const [searchById, setSearchById] = useState([]);
   const handleClose = () => setShow(false);
-  const checkList = [
-    "Milk",
-    "Peppers",
-    "Beans",
-    "Tinned Tomatoes",
-    "Cheese",
-    "Cream",
-    "Chicken",
-    "Beef",
-    "Eggs",
-    "Quorn",
-    "Bread",
-    "Bacon",
-    "Butter",
-    "Ham",
-    "Tofu",
-    "Halloumi",
-    "Steak",
-    "Pasta",
-  ];
+  // const checkList = [
+  //   "Milk",
+  //   "Peppers",
+  //   "Beans",
+  //   "Tinned Tomatoes",
+  //   "Cheese",
+  //   "Cream",
+  //   "Chicken",
+  //   "Beef",
+  //   "Eggs",
+  //   "Quorn",
+  //   "Bread",
+  //   "Bacon",
+  //   "Butter",
+  //   "Ham",
+  //   "Tofu",
+  //   "Halloumi",
+  //   "Steak",
+  //   "Pasta",
+  // ];
   // Add/Remove checked item from list
   const handleCheck = async (event) => {
     var updatedList = [...checked];
@@ -153,8 +155,8 @@ function App() {
         <div className="list-container">
           {checkList.map((item, index) => (
             <div className="check-list" key={index}>
-              <input value={item} type="checkbox" onChange={handleCheck} />
-              <span className={isChecked(item)}>{item}</span>
+              <input value={item.item} type="checkbox" onChange={handleCheck} />
+              <span className={isChecked(item.item)}><img className="ingredients" src={process.env.PUBLIC_URL + item.image}></img></span>
             </div>
           ))}
         </div>
