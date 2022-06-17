@@ -13,7 +13,8 @@ h6 {
   font-weight: bold;
   background-color: black;
   padding-bottom: 8px;
-  font-size: 18pt;
+  // font-size: 12pt;
+  font-family: monospace;
 }
 
 .footerLogo {
@@ -43,7 +44,7 @@ h6 {
 
 .footer-info-left,
 .footer-info-center {
-  font-size: 12pt;
+  font-size: 10pt;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
