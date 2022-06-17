@@ -3,4 +3,22 @@
   justify-content: flex;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+// .search-body {
+//   background-color: black;
+// }
+
+.card-col {
+  background-color: black;
+}
+
+.search-card {
+  background-color: black;
+  color: white;
+  min-height: 320px;
+  border-width: 4px;
+  border-color: black !important;
 }

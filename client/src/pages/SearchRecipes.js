@@ -104,7 +104,7 @@ const SearchRecipes = () => {
         </Container>
       </Jumbotron>
 
-      <Container>
+      <Container className="search-body">
         {/* was generating an empty h2 but keeping incase it's important */}
         {/* <h2>
           {searchedRecipes.length
@@ -114,7 +114,7 @@ const SearchRecipes = () => {
         <CardColumns>
           {searchedRecipes.map((data) => {
             return (
-              <Card className="mt-4" key={data.recipeId} border="dark">
+              <Card className="search-card mt-4" key={data.recipeId} border="dark">
                 {data.image ? (
                   <Card.Img
                     src={data.image}
