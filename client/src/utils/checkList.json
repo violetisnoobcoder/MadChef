@@ -6,5 +6,33 @@
   {
     "item": "Tomato",
     "image": "/images/tomato.png"
+  },
+  {
+    "item": "Onion",
+    "image": "/images/onion.png"
+  },
+  {
+    "item": "Beans",
+    "image": "/images/beans.png"
+  },
+  {
+    "item": "Cheese",
+    "image": "/images/cheese.png"
+  },
+  {
+    "item": "Chicken",
+    "image": "/images/chicken.png"
+  },
+  {
+    "item": "Pasta",
+    "image": "/images/pasta.png"
+  },
+  {
+    "item": "Pepper",
+    "image": "/images/pepper.png"
+  },
+  {
+    "item": "Tofu",
+    "image": "/images/tofu.png"
   }
 ]

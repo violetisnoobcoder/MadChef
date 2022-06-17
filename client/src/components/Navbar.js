@@ -24,9 +24,9 @@ const AppNavbar = () => {
             id="madchef-title"
             as={Link}
             to="/"
-            style={{ marginBottom: "0px", paddingTop: "10px" }}
+            // style={{ marginBottom: "0px", paddingTop: "10px" }}
           >
-            MadChef
+            <img className="madchef-logo" src="/images/madchef.png"></img>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbar" />
           <Navbar.Collapse id="navbar">

@@ -17,7 +17,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          MadChef
+          <img className="madchef-logo" src="/images/madchef.png"></img>
         </a>
       </section>
       <section className="footer-info">
