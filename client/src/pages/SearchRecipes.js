@@ -91,12 +91,12 @@ const SearchRecipes = () => {
                   onChange={(e) => setSearchInput(e.target.value)}
                   type="text"
                   size="lg"
-                  placeholder="Search for a recipe"
+                  placeholder="Already have an idea?"
                 />
               </Col>
               <Col xs={12} md={4}>
                 <Button type="submit" variant="success" size="lg">
-                  Submit
+                  Search
                 </Button>
               </Col>
             </Form.Row>
