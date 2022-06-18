@@ -29,6 +29,28 @@ $ npm run develop
 
 This should start the react build, spin up the server and open the application on localhost.
 
+## Screenshots
+
+### Home screen login
+
+![image1](./client/src/assets/loginScreen.png)
+
+### User logged in
+
+![image2](./client/src/assets/homeScreenUserLoggedIn.png)
+
+### Recpie builder
+
+![image3](./client/src/assets/recipeBuilder.png)
+
+### Searched recipes
+
+![image4](./client/src/assets/searchRecipes.png)
+
+### Saved recipes
+
+![image5](./client/src/assets/savedRecipes.png)
+
 ## Contact
 
 For questions or comments to anyone of our team members, feel free to contact us.
